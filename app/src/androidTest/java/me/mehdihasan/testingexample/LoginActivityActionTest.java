@@ -48,5 +48,48 @@ public class LoginActivityActionTest {
         onView(withId(R.id.errorText)).check(matches(withText("Login success")));
     }
 
-    //private void closeSoftKeyboard() {}
+    @Test
+    public void loginTestFailForEmail() {
+        // Type text
+        onView(withId(R.id.emailEditText))
+                .perform(typeText(failEmail));
+        onView(withId(R.id.passwordEditText))
+                .perform(typeText(passPassword));
+
+        // press the button
+        onView(withId(R.id.button)).perform(click());
+
+        // Check that the result has changed
+        onView(withId(R.id.errorText)).check(matches(withText("Invalid email address")));
+    }
+
+    @Test
+    public void loginTestFailForTooShortPassword() {
+        // Type text
+        onView(withId(R.id.emailEditText))
+                .perform(typeText(passEmail));
+        onView(withId(R.id.passwordEditText))
+                .perform(typeText(failPassword));
+
+        // press the button
+        onView(withId(R.id.button)).perform(click());
+
+        // Check that the result has changed
+        onView(withId(R.id.errorText)).check(matches(withText("The provided password is too short")));
+    }
+
+    @Test
+    public void loginTestFailForEmptyPassword() {
+        // Type text
+        onView(withId(R.id.emailEditText))
+                .perform(typeText(passEmail));
+        onView(withId(R.id.passwordEditText))
+                .perform(typeText(""));
+
+        // press the button
+        onView(withId(R.id.button)).perform(click());
+
+        // Check that the result has changed
+        onView(withId(R.id.errorText)).check(matches(withText("The provided password is invalid")));
+    }
 }

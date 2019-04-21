@@ -26,15 +26,15 @@ public class MainActivity extends AppCompatActivity {
 
         loginButton.setOnClickListener(v -> {
 
-            // case 01
-            if (!loginUtils.isValidPassword(passwordEditText.getEditableText().toString())) {
-                errorText.setText("The provided password is too short");
-                return;
-            }
-
             // case 02
             if (TextUtils.isEmpty(passwordEditText.getEditableText().toString().trim())) {
                 errorText.setText("The provided password is invalid");
+                return;
+            }
+
+            // case 01
+            if (!loginUtils.isValidPassword(passwordEditText.getEditableText().toString())) {
+                errorText.setText("The provided password is too short");
                 return;
             }
 

@@ -9,7 +9,6 @@ import androidx.test.rule.ActivityTestRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 
-import static androidx.test.espresso.Espresso.closeSoftKeyboard;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.typeText;
@@ -27,8 +26,8 @@ public class LoginActivityActionTest {
     private String failPassword = "123456";
 
     @Rule
-    public ActivityTestRule<MainActivity> activityRule
-            = new ActivityTestRule<>(MainActivity.class);
+    public ActivityTestRule<LoginActivity> activityRule
+            = new ActivityTestRule<>(LoginActivity.class);
 
     @Before
     public void setUp() {}

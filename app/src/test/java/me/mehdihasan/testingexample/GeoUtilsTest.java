@@ -40,7 +40,7 @@ public class GeoUtilsTest {
     public void validGeolocationPasses() throws Exception {
 
         String homeLundZip = "22223";
-        
+
         // whenever we ask for Lund home address for the postal code,
         // the mock object is going to return 22223
         when(addressForHomeLund.getPostalCode())

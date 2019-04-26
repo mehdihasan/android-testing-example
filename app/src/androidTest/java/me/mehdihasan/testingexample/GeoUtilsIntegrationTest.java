@@ -31,6 +31,6 @@ public class GeoUtilsIntegrationTest {
     @Test
     public void aTestThatShouldFail() throws Exception {
         String zipCode = geoUtils.getCurrentCode(0, 0);
-        assertNotEquals("5555", zipCode);
+        assertNull(zipCode);
     }
 }

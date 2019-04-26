@@ -16,11 +16,14 @@ public class GeoUtils {
         this.geocoder = new Geocoder(context, Locale.getDefault());
     }
 
+    public GeoUtils(Geocoder geocoder) {
+        this.geocoder = geocoder;
+    }
+
     public String getCurrentCode(double lat, double lon) throws IOException {
         List<Address> addressesAtLocation = geocoder.getFromLocation(lat, lon, 1);
-        if (addressesAtLocation.size() <= 0) {
-            return "";
-        }
-        return addressesAtLocation.get(0).getPostalCode();
+        return (addressesAtLocation.size() > 0) ?
+                addressesAtLocation.get(0).getPostalCode() :
+                null;
     }
 }

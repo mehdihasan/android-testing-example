@@ -3,7 +3,14 @@
 For this assignment, you will be building a basic login activity for an application. The goal of this assignment is to demonstrate your ability to use Android's testing facilities.
 
 
-### Specification
+### Examples covered
+
+- Unit test: Junit + Mockito
+- Integration / Instrumentation test
+- UI test
+
+
+### Initial Specification
 
 To complete the assignment, you will need to create a new Android app that has a single main Activity activity. You must implement this class to meet the specification below. No skeleton code is provided as part of this example and you are expected to be able to implement the specification from scratch using what you have learned in the specialization. You may add additional supporting classes as needed, but you must ensure that any code that you add is properly tested and needed.
 

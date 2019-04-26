@@ -1,6 +1,6 @@
-# Testing Assignment
+# Android Testing Example
 
-For this assignment, you will be building a basic login activity for an application. The goal of this assignment is to demonstrate your ability to use Android's testing facilities.
+For this example, you will be building a basic login activity for an application. The goal of this example is to demonstrate Android's testing facilities.
 
 
 ### Examples covered

@@ -11,6 +11,7 @@ import androidx.test.filters.LargeTest;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
@@ -20,75 +21,88 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 @LargeTest
 public class LoginActivityActionTest {
 
-    private String passEmail = "mail@oroni.com";
-    private String passPassword = "123456789";
-    private String failEmail = "123456789";
-    private String failPassword = "123456";
-
     @Rule
     public ActivityTestRule<LoginActivity> activityRule
             = new ActivityTestRule<>(LoginActivity.class);
 
     @Before
-    public void setUp() {}
-
-    @Test
-    public void loginTestSuccess() {
-        // Type text
-        onView(withId(R.id.emailEditText))
-                .perform(typeText(passEmail));
-        onView(withId(R.id.passwordEditText))
-                .perform(typeText(passPassword));
-
-        // press the button
-        onView(withId(R.id.button)).perform(click());
-
-        // Check that the result has changed
-        onView(withId(R.id.errorText)).check(matches(withText("Login success")));
+    public void setUp() {
+        activityRule.getActivity();
     }
 
     @Test
-    public void loginTestFailForEmail() {
+    public void loginTestSuccess() throws Exception {
         // Type text
         onView(withId(R.id.emailEditText))
-                .perform(typeText(failEmail));
+                .perform(typeText("oroni@gmail.com"));
         onView(withId(R.id.passwordEditText))
-                .perform(typeText(passPassword));
+                .perform(typeText("123456789"))
+                .perform(closeSoftKeyboard());
+
+        //Thread.sleep(250);
 
         // press the button
         onView(withId(R.id.button)).perform(click());
 
         // Check that the result has changed
-        onView(withId(R.id.errorText)).check(matches(withText("Invalid email address")));
+        onView(withId(R.id.errorText))
+                .check(matches(withText("Login success")));
     }
 
     @Test
-    public void loginTestFailForTooShortPassword() {
+    public void loginTestFailForEmail() throws Exception {
         // Type text
         onView(withId(R.id.emailEditText))
-                .perform(typeText(passEmail));
+                .perform(typeText("dfgdgfg"));
         onView(withId(R.id.passwordEditText))
-                .perform(typeText(failPassword));
+                .perform(typeText("123456789"))
+                .perform(closeSoftKeyboard());
+
+        //Thread.sleep(250);
 
         // press the button
         onView(withId(R.id.button)).perform(click());
 
         // Check that the result has changed
-        onView(withId(R.id.errorText)).check(matches(withText("The provided password is too short")));
+        onView(withId(R.id.errorText))
+                .check(matches(withText("Invalid email address")));
     }
 
     @Test
-    public void loginTestFailForEmptyPassword() {
+    public void loginTestFailForTooShortPassword() throws Exception {
         // Type text
         onView(withId(R.id.emailEditText))
-                .perform(typeText(passEmail));
+                .perform(typeText("oroni@gmail.com"));
         onView(withId(R.id.passwordEditText))
-                .perform(typeText(""));
+                .perform(typeText("12345"))
+                .perform(closeSoftKeyboard());
+
+        //Thread.sleep(250);
 
         // press the button
         onView(withId(R.id.button)).perform(click());
 
         // Check that the result has changed
-        onView(withId(R.id.errorText)).check(matches(withText("The provided password is invalid")));
+        onView(withId(R.id.errorText))
+                .check(matches(withText("The provided password is too short")));
+    }
+
+    @Test
+    public void loginTestFailForEmptyPassword() throws Exception {
+        // Type text
+        onView(withId(R.id.emailEditText))
+                .perform(typeText("oroni@gmail.com"));
+        onView(withId(R.id.passwordEditText))
+                .perform(typeText(""))
+                .perform(closeSoftKeyboard());
+
+        //Thread.sleep(250);
+
+        // press the button
+        onView(withId(R.id.button)).perform(click());
+
+        // Check that the result has changed
+        onView(withId(R.id.errorText))
+                .check(matches(withText("The provided password is invalid")));
     }
 }

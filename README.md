@@ -5,9 +5,17 @@ For this example, you will be building a basic login activity for an application
 
 ### Examples covered
 
-- Unit test: Junit + Mockito
-- Integration / Instrumentation test
-- UI test
+## Unit test
+- Tests those are independent of Android API. We can use Junit library to run those tests.
+- There is a library named Mockito which we can use to mock some Android APIs. This is a type of unit test that is an alternative of the Integration/instrumentation test. 
+frameworks: Junit + Mockito
+
+## Integration / Instrumentation test
+Tests those has dependency on any Android API.  
+
+## UI test
+Tests those should run on any android emulator or real android device. Mostly to check if the UI flow working as expected.
+frameworks: Espresso
 
 
 ### Initial Specification

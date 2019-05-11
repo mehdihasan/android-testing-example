@@ -6,9 +6,10 @@ For this example, you will be building a basic login activity for an application
 ### Examples covered
 
 ## Unit test
-- Tests those are independent of Android API. We can use Junit library to run those tests.
-- There is a library named Mockito which we can use to mock some Android APIs. This is a type of unit test that is an alternative of the Integration/instrumentation test. 
-frameworks: Junit + Mockito
+- Junit: Tests those are independent of Android API. We can use Junit library to run those tests.
+- Mockito: There is a library named Mockito which we can use to mock some Android APIs. This is a type of unit test that is an alternative of the Integration/instrumentation test.
+- Robolectric: Another type of Unit Test which is an alternative to instrumentation / integration test.   
+frameworks: Junit / Mockito / Robolectric 
 
 ## Integration / Instrumentation test
 Tests those has dependency on any Android API.  
@@ -52,3 +53,7 @@ Your Activity must meet the following requirements:
 public void testSomething() {
 }
 ```
+
+
+### Resources
+1. [Robolectric](https://www.vogella.com/tutorials/Robolectric/article.html)

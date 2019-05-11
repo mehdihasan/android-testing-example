@@ -20,6 +20,13 @@ public class GeoUtils {
         this.geocoder = geocoder;
     }
 
+    /**
+     * IOException: grpc failed
+     * @param lat
+     * @param lon
+     * @return
+     * @throws IOException
+     */
     public String getCurrentCode(double lat, double lon) throws IOException {
         List<Address> addressesAtLocation = geocoder.getFromLocation(lat, lon, 1);
         return (addressesAtLocation.size() > 0) ?

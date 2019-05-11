@@ -11,6 +11,9 @@ import static org.junit.Assert.*;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.platform.app.InstrumentationRegistry;
 
+/**
+ * Example of an integration / instrumentation test
+ */
 @RunWith(AndroidJUnit4.class)
 public class GeoUtilsIntegrationTest {
 

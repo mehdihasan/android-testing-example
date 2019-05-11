@@ -16,6 +16,9 @@ import static org.mockito.Mockito.anyDouble;
 import static org.mockito.Mockito.anyInt;
 import static org.mockito.Mockito.when;
 
+/**
+ * Example of a Mockito Unit test
+ */
 @RunWith(MockitoJUnitRunner.class)
 public class GeoUtilsTest {
 

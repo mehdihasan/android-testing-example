@@ -8,7 +8,7 @@ For this example, you will be building a basic login activity for an application
 ## Unit test
 - Junit: Tests those are independent of Android API. We can use Junit library to run those tests.
 - Mockito: There is a library named Mockito which we can use to mock some Android APIs. This is a type of unit test that is an alternative of the Integration/instrumentation test.
-- Robolectric: Another type of Unit Test which is an alternative to instrumentation / integration test.   
+- Robolectric: Another type of Unit Test which is an alternative to instrumentation / integration / (even) UI test! (search for "required-for-robolectric" to find what is to be done to integrate Roboelectric)   
 frameworks: Junit / Mockito / Robolectric 
 
 ## Integration / Instrumentation test

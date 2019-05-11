@@ -20,6 +20,13 @@ android {
         sourceCompatibility = '1.8'
         targetCompatibility = '1.8'
     }
+
+    // required-for-robolectric (2)
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
@@ -30,7 +37,7 @@ dependencies {
     // for junit test
     testImplementation 'junit:junit:4.12'
 
-    // Robolectric
+    // required-for-robolectric (1)
     testImplementation "org.robolectric:robolectric:4.2"
 
     // mockito for unit tests

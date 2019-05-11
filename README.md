@@ -2,24 +2,29 @@
 
 For this example, you will be building a basic login activity for an application. The goal of this example is to demonstrate Android's testing facilities.
 
+Android testing strategy: The Testing Pyramid, showing the three categories of tests that we should include in our app's test suite:
 
-### Examples covered
+![testingPyramid](https://developer.android.com/images/training/testing/pyramid.png)
 
-## Unit test
-- Junit: Tests those are independent of Android API. We can use Junit library to run those tests.
-- Mockito: There is a library named Mockito which we can use to mock some Android APIs. This is a type of unit test that is an alternative of the Integration/instrumentation test.
-- Robolectric: Another type of Unit Test which is an alternative to instrumentation / integration / (even) UI test! (search for "required-for-robolectric" to find what is to be done to integrate Roboelectric)   
-frameworks: Junit / Mockito / Robolectric 
 
-## Integration / Instrumentation test
+
+## Examples covered
+
+### Unit test
+frameworks: Junit / Mockito / Robolectric
+- **Junit:** Tests those are independent of Android API. We can use Junit library to run those tests.
+- **Mockito:** There is a library named Mockito which we can use to mock some Android APIs. This is a type of unit test that is an alternative of the Integration/instrumentation test.
+- **Robolectric:** Another type of Unit Test which is an alternative to instrumentation / integration / (even) UI test! (search for "required-for-robolectric" to find what is to be done to integrate Roboelectric)    
+
+### Integration / Instrumentation test
 Tests those has dependency on any Android API.  
 
-## UI test
+### UI test
 Tests those should run on any android emulator or real android device. Mostly to check if the UI flow working as expected.
 frameworks: Espresso
 
 
-### Initial Specification
+## Initial Specification
 
 To complete the assignment, you will need to create a new Android app that has a single main Activity activity. You must implement this class to meet the specification below. No skeleton code is provided as part of this example and you are expected to be able to implement the specification from scratch using what you have learned in the specialization. You may add additional supporting classes as needed, but you must ensure that any code that you add is properly tested and needed.
 
@@ -56,4 +61,5 @@ public void testSomething() {
 
 
 ### Resources
-1. [Robolectric](https://www.vogella.com/tutorials/Robolectric/article.html)
+1. [Fundamentals](https://developer.android.com/training/testing/fundamentals) 
+2. [Robolectric](https://www.vogella.com/tutorials/Robolectric/article.html)

@@ -36,7 +36,7 @@ import static org.junit.Assert.assertThat;
  *
  */
 @RunWith(RobolectricTestRunner.class)
-public class LoginActivityTest {
+public class LoginActivityRoboElectricTest {
 
     private LoginActivity loginActivity;
 

@@ -31,9 +31,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 
     // mockito for unit tests
-    testImplementation 'org.mockito:mockito-core:2.7.22'
+    testImplementation 'org.mockito:mockito-core:2.23.4'
     // mockito for android tests
-    androidTestImplementation 'org.mockito:mockito-android:2.7.22'
+    androidTestImplementation 'org.mockito:mockito-android:2.23.4'
 
     // for instrument / integration test
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
